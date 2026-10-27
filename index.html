@@ -4,114 +4,102 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>김성태</title>
-<meta name="description" content="김성태 개인 페이지">
+<meta name="description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
 <meta property="og:type" content="website">
 <meta property="og:title" content="김성태">
-<meta property="og:description" content="김성태 개인 페이지">
+<meta property="og:description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
 <meta property="og:url" content="https://aerrfa0.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f2a47'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0f2a47;
-    --accent:#1f5f9e;
-    --tint:#e8f0f9;
-    --ink:#1b2430;
-    --muted:#5f6b7a;
-    --line:#e1e6ed;
-    --bg:#f3f5f8;
+    --navy:#0f2a47; --accent:#1f5f9e; --tint:#e8f0f9; --ink:#1b2430;
+    --muted:#5f6b7a; --line:#e1e6ed; --bg:#f3f5f8; --hdr-sub:#c9d6e6;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;min-height:100vh;display:flex;flex-direction:column;
-    background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    font-size:15px;line-height:1.6;
-  }
-  .wrap{max-width:720px;margin:0 auto}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit}
+  .wrap{max-width:960px;margin:0 auto;padding:0 40px}
 
-  .top{background:var(--navy);color:#fff;padding:72px 24px 64px}
+  header.band{background:var(--navy);color:#fff;padding:56px 0 48px}
+  .home{display:inline-block;margin-bottom:18px;color:var(--hdr-sub);font-size:14px;text-decoration:none}
+  .home:hover{color:#fff}
   h1{margin:0;font-size:44px;line-height:1.15;font-weight:700;letter-spacing:.04em}
-  .en{margin:6px 0 0;font-size:16px;color:#c9d6e6}
-  .hello{margin:24px 0 0;font-size:16px;color:#c9d6e6}
+  .en{margin:6px 0 0;font-size:16px;color:var(--hdr-sub)}
+  .role{margin:24px 0 0;font-size:19px;font-weight:500;line-height:1.5}
+  .sub{margin:4px 0 0;color:var(--hdr-sub)}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin:22px 0 0;padding:16px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);list-style:none;font-size:14.5px}
+  .contact span{color:#9fb6d1;margin-right:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+  .contact a:hover{border-bottom-color:#fff}
 
-  main{flex:1;padding:36px 24px 56px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-
-  .card{
-    display:flex;flex-direction:column;min-height:150px;
-    background:#fff;border:1px solid var(--line);border-radius:8px;
-    padding:22px;color:inherit;text-decoration:none;
+  @media (max-width:760px){
+    .wrap{padding:0 20px}
+    header.band{padding:36px 0 32px}
+    h1{font-size:32px}
+    .role{font-size:17px;margin-top:18px}
+    .contact{flex-direction:column}
   }
-  .card h2{margin:0;font-size:18px;font-weight:700;color:var(--navy)}
-  .card p{margin:6px 0 0;font-size:14px;color:var(--muted)}
-  .card .go{margin-top:auto;padding-top:14px;font-size:14px;font-weight:500;color:var(--accent)}
 
-  a.card{transition:border-color .15s, box-shadow .15s}
-  a.card:hover{border-color:var(--accent);box-shadow:0 4px 14px rgba(15,42,71,.08)}
-  a.card:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-
-  .card.soon{background:transparent;border-style:dashed}
-  .card.soon h2{color:var(--muted)}
-  .card.soon .go{color:#9aa4b1;font-weight:400}
-
-  footer{padding:0 24px 32px;text-align:center;color:var(--muted);font-size:12.5px}
-
-  @media (max-width:520px){
-    .top{padding:52px 20px 44px}
-    h1{font-size:36px}
-    main{padding:24px 16px 40px}
-    .grid{gap:10px}
-    .card{padding:18px;min-height:132px}
-    .card h2{font-size:16px}
-    .card p{font-size:13px}
+  body{min-height:100vh;display:flex;flex-direction:column}
+  main{flex:1;padding:40px 0 56px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 40px}
+  h2{margin:0 0 14px;font-size:17px;font-weight:700;color:var(--navy)}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .chips a{display:inline-block;background:var(--tint);color:var(--accent);font-weight:500;font-size:14px;
+    padding:5px 14px;border-radius:4px;text-decoration:none;border:1px solid transparent}
+  .chips a:hover{border-color:var(--accent)}
+  .now{margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+  .now b{color:var(--navy);font-weight:700;margin-right:8px}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  .cta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px;border-radius:6px;
+    text-decoration:none;font-size:16px;font-weight:700;border:1px solid var(--accent)}
+  .cta small{display:block;font-size:12.5px;font-weight:400;margin-top:2px}
+  .cta.primary{background:var(--accent);color:#fff}
+  .cta.primary small{color:#d6e4f3}
+  .cta.primary:hover{background:var(--navy);border-color:var(--navy)}
+  .cta.secondary{background:#fff;color:var(--accent)}
+  .cta.secondary small{color:var(--muted)}
+  .cta.secondary:hover{background:var(--tint)}
+  .cta:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  footer{padding:0 0 32px;text-align:center;color:var(--muted);font-size:12.5px}
+  @media (max-width:760px){
+    main{padding:28px 0 40px}
+    .card{padding:24px 20px}
+    .actions{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
-
-<header class="top">
-  <div class="wrap">
-    <h1>김성태</h1>
-    <p class="en">Sung-tae Kim</p>
-    <p class="hello">방문해 주셔서 감사합니다.</p>
-  </div>
-</header>
+<header class="band"><div class="wrap">
+  
+  <h1>김성태</h1>
+  <p class="en">Sung-tae Kim</p>
+  <p class="role">업무 프로세스 설계 · 시스템 구축</p>
+  <p class="sub">커머스·D2C, CRM(Salesforce), SAP 영역 약 9년</p>
+  <ul class="contact">
+    <li><span>Email</span><a href="mailto:aerrfa@gmail.com">aerrfa@gmail.com</a></li>
+    <li><span>Phone</span><a href="tel:+821053289918">+82 10 5328 9918</a></li>
+  </ul>
+</div></header>
 
 <main>
   <div class="wrap">
-    <div class="grid">
-
-      <a class="card" href="resume.html">
-        <h2>이력서</h2>
-        <p>경력과 프로젝트 이력</p>
-        <span class="go">보기 →</span>
-      </a>
-
-      <div class="card soon">
-        <h2>포트폴리오</h2>
-        <p>주요 작업물</p>
-        <span class="go">준비 중</span>
-      </div>
-
-      <div class="card soon">
-        <h2>작업 노트</h2>
-        <p>업무 기록과 정리</p>
-        <span class="go">준비 중</span>
-      </div>
-
-      <div class="card soon">
-        <h2>연락처</h2>
-        <p>문의 및 연락 방법</p>
-        <span class="go">준비 중</span>
-      </div>
-
+    <div class="card">
+      <h2>Industries</h2>
+      <ul class="chips"><li><a href="resume.html#fields">유통</a></li><li><a href="resume.html#fields">전자</a></li><li><a href="resume.html#fields">자동차</a></li><li><a href="resume.html#fields">바이오</a></li><li><a href="resume.html#fields">보험</a></li><li><a href="resume.html#fields">공공</a></li></ul>
+      <p class="now"><b>Current</b>글로벌 전자 제조사 콘텐츠 CoE 구축 참여</p>
+    </div>
+    <div class="actions">
+      <a class="cta primary" href="resume.html"><span>View Resume<small>프로젝트 요약 · 고객사명 비공개</small></span><span aria-hidden="true">→</span></a>
+      <a class="cta secondary" href="resume-full.html"><span>Full Resume<small>고객사명 포함 · 비밀번호 필요</small></span><span aria-hidden="true">🔒</span></a>
     </div>
   </div>
 </main>
-
-<footer>© 2026 김성태</footer>
-
+<footer><div class="wrap">© 2026 김성태</div></footer>
 </body>
 </html>

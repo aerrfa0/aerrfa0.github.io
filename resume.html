@@ -3,452 +3,354 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>김성태 | CV</title>
+<title>김성태 | Resume</title>
 <meta name="description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
 <meta property="og:type" content="website">
-<meta property="og:title" content="김성태 | CV">
+<meta property="og:title" content="김성태 | Resume">
 <meta property="og:description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
 <meta property="og:url" content="https://aerrfa0.github.io/resume.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f2a47'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0f2a47;
-    --accent:#1f5f9e;
-    --tint:#e8f0f9;
-    --ink:#1b2430;
-    --muted:#5f6b7a;
-    --line:#e1e6ed;
-    --bg:#f3f5f8;
+    --navy:#0f2a47; --accent:#1f5f9e; --tint:#e8f0f9; --ink:#1b2430;
+    --muted:#5f6b7a; --line:#e1e6ed; --bg:#f3f5f8; --hdr-sub:#c9d6e6;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    font-size:15px;line-height:1.7;
-  }
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit}
   .wrap{max-width:960px;margin:0 auto;padding:0 40px}
 
-  header.band{background:var(--navy);color:#fff;padding:64px 0 56px}
-  h1{margin:0;font-size:46px;line-height:1.15;font-weight:700;letter-spacing:.04em}
+  header.band{background:var(--navy);color:#fff;padding:56px 0 48px}
+  .home{display:inline-block;margin-bottom:18px;color:var(--hdr-sub);font-size:14px;text-decoration:none}
+  .home:hover{color:#fff}
+  h1{margin:0;font-size:44px;line-height:1.15;font-weight:700;letter-spacing:.04em}
+  .en{margin:6px 0 0;font-size:16px;color:var(--hdr-sub)}
+  .role{margin:24px 0 0;font-size:19px;font-weight:500;line-height:1.5}
+  .sub{margin:4px 0 0;color:var(--hdr-sub)}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin:22px 0 0;padding:16px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);list-style:none;font-size:14.5px}
+  .contact span{color:#9fb6d1;margin-right:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+  .contact a:hover{border-bottom-color:#fff}
 
-  .tabbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(15,42,71,.04)}
-  nav.tabs{display:flex;flex-wrap:wrap;gap:0 32px}
-  nav.tabs button{
-    appearance:none;background:none;border:0;border-bottom:3px solid transparent;
-    margin-bottom:-1px;padding:18px 2px 14px;cursor:pointer;
-    font:inherit;font-size:15px;font-weight:500;color:var(--muted);
+  @media (max-width:760px){
+    .wrap{padding:0 20px}
+    header.band{padding:36px 0 32px}
+    h1{font-size:32px}
+    .role{font-size:17px;margin-top:18px}
+    .contact{flex-direction:column}
   }
+
+  .tabbar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+  .tabscroll{position:relative}
+  nav.tabs{display:flex;gap:0 32px;overflow-x:auto;scrollbar-width:none}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{appearance:none;background:none;border:0;border-bottom:3px solid transparent;
+    padding:18px 2px 14px;cursor:pointer;white-space:nowrap;flex:none;
+    font:inherit;font-size:15px;font-weight:500;color:var(--muted)}
   nav.tabs button:hover{color:var(--accent)}
   nav.tabs button[aria-selected="true"]{color:var(--navy);font-weight:700;border-bottom-color:var(--accent)}
-  nav.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  nav.tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .tabscroll::after{content:"›";position:absolute;right:0;top:0;bottom:3px;width:56px;
+    display:flex;align-items:center;justify-content:flex-end;padding-right:2px;
+    font-size:22px;color:var(--accent);pointer-events:none;
+    background:linear-gradient(to right,rgba(255,255,255,0),#fff 60%);opacity:0;transition:opacity .2s}
+  .tabscroll.more::after{opacity:1}
 
   main.wrap{padding-top:32px;padding-bottom:88px}
   .panel[hidden]{display:none}
 
-  section{
-    display:grid;grid-template-columns:190px 1fr;column-gap:40px;
-    background:#fff;border:1px solid var(--line);border-radius:6px;
-    padding:34px 40px;margin-bottom:20px;
-  }
+  section{display:grid;grid-template-columns:190px 1fr;column-gap:40px;
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:34px 40px;margin-bottom:20px}
+  section.wide{display:block}
+  section.wide>h2{margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
   h2{margin:0;font-size:17px;line-height:1.6;font-weight:700;color:var(--navy)}
-
-  .summary{margin:0;line-height:1.9;max-width:62ch}
+  h2 .count{font-weight:500;font-size:13.5px;color:var(--muted);margin-left:8px}
+  .summary{margin:0;line-height:1.9}
 
   dl.rows{margin:0;display:grid;grid-template-columns:140px 1fr;align-items:center;row-gap:12px;column-gap:24px}
-  dl.rows dt{
-    justify-self:start;background:var(--tint);color:var(--accent);
-    font-weight:700;font-size:14px;padding:2px 14px;border-radius:4px;
-  }
+  .tag{display:inline-block;background:var(--tint);color:var(--accent);font-weight:700;font-size:14px;
+    padding:2px 14px;border-radius:4px;line-height:1.7}
+  dl.rows dt{justify-self:start}
   dl.rows dd{margin:0}
 
-  .entry{display:grid;grid-template-columns:140px 1fr;column-gap:20px}
+  .entry{display:grid;grid-template-columns:150px 1fr;column-gap:20px}
   .period{color:var(--accent);font-weight:500;font-size:13.5px;font-variant-numeric:tabular-nums;padding-top:3px}
-  .entry>div:last-child{
-    position:relative;border-left:2px solid var(--line);
-    padding:0 0 30px 26px;
-  }
-  .entry:last-child>div:last-child{padding-bottom:0}
-  .entry>div:last-child::before{
-    content:"";position:absolute;left:-6px;top:8px;width:10px;height:10px;
-    border-radius:50%;background:#fff;border:2px solid var(--accent);
-  }
+  .period small{display:block;color:var(--muted);font-weight:400;font-size:12.5px}
+  .entry>.body{position:relative;border-left:2px solid var(--line);padding:0 0 30px 26px}
+  .entry:last-child>.body{padding-bottom:0}
+  .entry>.body::before{content:"";position:absolute;left:-6px;top:8px;width:10px;height:10px;
+    border-radius:50%;background:#fff;border:2px solid var(--accent)}
   h3{margin:0 0 8px;font-size:16px;line-height:1.5;font-weight:700;color:var(--navy)}
-  h3 .role{
-    font-weight:500;font-size:12.5px;color:var(--accent);background:var(--tint);
-    padding:1px 9px;border-radius:4px;margin-left:10px;vertical-align:1px;
-  }
-  ul{margin:0;padding-left:18px}
-  li{margin:3px 0}
-  li::marker{color:var(--accent)}
+  ul.b{margin:0;padding-left:18px}
+  ul.b li{margin:3px 0}
+  ul.b li::marker{color:var(--accent)}
+
+  .ind{display:grid;grid-template-columns:150px 1fr;column-gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+  .ind:first-of-type{border-top:0;padding-top:0}
+  .ind:last-child{padding-bottom:0}
+  .ind .focus{margin:0 0 8px;font-weight:700;color:var(--navy)}
+  .ind ul{margin:0;padding:0;list-style:none}
+  .ind li{display:grid;grid-template-columns:150px 1fr;column-gap:16px;padding:3px 0}
+  .ind li span{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
 
   @media (max-width:760px){
-    .wrap{padding:0 20px}
-    header.band{padding:40px 0 34px}
-    h1{font-size:32px}
-    section{grid-template-columns:1fr;row-gap:16px;padding:24px 22px}
-    nav.tabs{gap:0 20px;overflow-x:auto;flex-wrap:nowrap}
-    nav.tabs button{white-space:nowrap}
-    .entry{grid-template-columns:1fr}
+    nav.tabs{gap:0 22px}
+    section{grid-template-columns:1fr;row-gap:16px;padding:24px 20px}
+    section.wide>h2{margin-bottom:18px}
+    .entry,.ind{grid-template-columns:1fr}
     .period{padding:0 0 4px 28px}
-    dl.rows{grid-template-columns:110px 1fr;column-gap:14px}
+    .period small{display:inline;margin-left:8px}
+    .ind>div:first-child{margin-bottom:10px}
+    .ind li{grid-template-columns:1fr;padding:6px 0}
+    dl.rows{grid-template-columns:auto 1fr;column-gap:14px}
   }
   @media print{
     @page{size:A4;margin:14mm}
     body{background:#fff;font-size:10.5pt}
-    header.band{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:24px 0}
-    .tabbar{display:none}
+    header.band{background:#fff;color:var(--navy);padding:0 0 12px;border-bottom:2px solid var(--navy)}
+    header.band .en,header.band .sub,.contact span{color:var(--muted)}
+    .contact{border-top:0}
+    .contact a{color:var(--ink);border:0}
+    .home,.tabbar{display:none}
+    .panel{display:none!important}
+    #p-overview{display:block!important}
     .wrap{max-width:none;padding:0}
+    main.wrap{padding-top:12px}
     section,.entry{break-inside:avoid}
-    section{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:18px 0;margin:0}
+    section{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:16px 0;margin:0}
   }
-  header.band .home{display:inline-block;margin-bottom:18px;color:#c9d6e6;font-size:14px;text-decoration:none}
-  header.band .home:hover{color:#fff}
-  @media print{header.band .home{display:none}}
 </style>
 </head>
 <body>
-<header class="band"><div class="wrap"><a class="home" href="./">← 처음으로</a><h1>김성태</h1></div></header>
-<div class="tabbar"><div class="wrap"><nav class="tabs" role="tablist" aria-label="이력 상세">
-    <button role="tab" id="t-all" aria-controls="p-all" aria-selected="true">전체</button>
-    <button role="tab" id="t-fields" aria-controls="p-fields" aria-selected="false" tabindex="-1">Fields of expertise</button>
-    <button role="tab" id="t-exp" aria-controls="p-exp" aria-selected="false" tabindex="-1">Key Experiences</button>
-    <button role="tab" id="t-edu" aria-controls="p-edu" aria-selected="false" tabindex="-1">Education</button>
-    <button role="tab" id="t-prev" aria-controls="p-prev" aria-selected="false" tabindex="-1">Previous Experience</button>
-  </nav></div></div>
+<header class="band"><div class="wrap">
+  <a class="home" href="./">← Home</a>
+  <h1>김성태</h1>
+  <p class="en">Sung-tae Kim</p>
+  <p class="role">업무 프로세스 설계 · 시스템 구축</p>
+  <p class="sub">커머스·D2C, CRM(Salesforce), SAP 영역 약 9년</p>
+  <ul class="contact">
+    <li><span>Email</span><a href="mailto:aerrfa@gmail.com">aerrfa@gmail.com</a></li>
+    <li><span>Phone</span><a href="tel:+821053289918">+82 10 5328 9918</a></li>
+  </ul>
+</div></header>
+
+<div class="tabbar"><div class="wrap"><div class="tabscroll">
+  <nav class="tabs" role="tablist" aria-label="Resume sections"><button role="tab" id="t-overview" data-key="overview" aria-controls="p-overview" aria-selected="true">Overview</button><button role="tab" id="t-fields" data-key="fields" aria-controls="p-fields" aria-selected="false" tabindex="-1">Fields of Expertise</button><button role="tab" id="t-experience" data-key="experience" aria-controls="p-experience" aria-selected="false" tabindex="-1">Key Experiences</button><button role="tab" id="t-education" data-key="education" aria-controls="p-education" aria-selected="false" tabindex="-1">Education</button><button role="tab" id="t-previous" data-key="previous" aria-controls="p-previous" aria-selected="false" tabindex="-1">Previous Experience</button></nav>
+</div></div></div>
 <main class="wrap">
 
-<div class="panel" id="p-all" role="tabpanel" aria-labelledby="t-all">
-
-  <section>
-    <h2>요약</h2>
-    <p class="summary">김성태 시니어는 업무 프로세스 설계 및 시스템 구축 전문가로, 커머스·D2C 플랫폼, CRM(Salesforce), SAP 영역에서 약 9년의 경력을 보유함. 현재 삼성전자 GBC 콘텐츠 CoE 구축에 참여 중이며, 롯데마트·슈퍼 통합시스템, 삼성전자 D2C 통합 프로모션 관리시스템, 현대자동차 인증중고차 D2C 플랫폼, 삼성바이오로직스 Salesforce CRM 구축을 수행함. 이전에는 IFRS17 도입, 구분회계 등 재무·관리회계 프로젝트를 수행함.</p>
-  </section>
-
-  <section>
-    <h2>Fields of expertise</h2>
-    <dl class="rows">
-      <dt>유통</dt><dd>마트·슈퍼 통합시스템</dd>
-      <dt>전자</dt><dd>D2C 프로모션 관리 (SAP CAR)</dd>
-      <dt>자동차</dt><dd>중고차 D2C 플랫폼</dd>
-      <dt>바이오</dt><dd>CRM 영업관리 (Salesforce)</dd>
-      <dt>보험</dt><dd>IFRS17 사업비·K-ICS</dd>
-      <dt>공공</dt><dd>구분회계·손익 분석</dd>
-    </dl>
-  </section>
-
-  <section>
-    <h2>Key Experiences</h2>
-    <div>
-
+<div class="panel" id="p-overview" role="tabpanel" aria-labelledby="t-overview">
+  <section><h2>Summary</h2><p class="summary">김성태 시니어는 업무 프로세스 설계 및 시스템 구축 전문가로, 커머스·D2C 플랫폼, CRM(Salesforce), SAP 영역에서 약 9년의 경력을 보유함. 현재 글로벌 전자 제조사의 콘텐츠 CoE 구축에 참여 중이며, 대형 유통사 마트·슈퍼 통합시스템, 전자 제조사 D2C 통합 프로모션 관리시스템, 완성차 제조사 중고차 D2C 플랫폼, 바이오 CDMO 기업 Salesforce CRM 구축을 수행함. 이전에는 IFRS17 도입, 구분회계 등 재무·관리회계 프로젝트를 수행함.</p></section>
+  <section><h2>Fields of Expertise</h2><dl class="rows"><dt><span class="tag">유통</span></dt><dd>마트·슈퍼 통합시스템</dd><dt><span class="tag">전자</span></dt><dd>D2C 프로모션 관리 (SAP CAR)</dd><dt><span class="tag">자동차</span></dt><dd>중고차 D2C 플랫폼</dd><dt><span class="tag">바이오</span></dt><dd>CRM 영업관리 (Salesforce)</dd><dt><span class="tag">보험</span></dt><dd>IFRS17 사업비·K-ICS</dd><dt><span class="tag">공공</span></dt><dd>구분회계·손익 분석</dd></dl></section>
+  <section class="wide"><h2>Key Experiences</h2><div>
       <article class="entry">
-        <div class="period">2026.09 – 현재</div>
-        <div>
-          <h3>삼성전자, GBC 콘텐츠 CoE<span class="role">Member</span></h3>
-          <ul>
-            <li>본사(GBC·AIC)–총괄–법인 간 콘텐츠 CoE 운영모델 및 에이전시 R&amp;R 설계</li>
-            <li>동남아 9개 법인 콘텐츠 제작 현황·비용 전수 진단 및 Power BI 기반 분석 체계 구축</li>
-            <li>Celtra 기반 Master/Variation 콘텐츠 제작 자동화 운영 프로세스 및 내재화 방안 수립</li>
-          </ul>
+        <div class="period">2026.09 – Present</div>
+        <div class="body">
+          <h3>글로벌 전자 제조사, 콘텐츠 CoE 구축</h3>
+          <ul class="b"><li>본사–지역총괄–해외법인 간 콘텐츠 CoE 운영모델 및 에이전시 R&amp;R 설계</li><li>해외 법인 콘텐츠 제작 현황·비용 전수 진단 및 Power BI 기반 분석 체계 구축</li><li>Master/Variation 콘텐츠 제작 자동화 운영 프로세스 및 내재화 방안 수립</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2024.06 – 2026.04</div>
-        <div>
-          <h3>롯데마트, 마트·슈퍼 통합시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>마트·슈퍼 차세대 통합시스템 구축을 위한 업무 프로세스 표준화 및 To-Be 시스템 설계</li>
-            <li>행사(프로모션) 모듈 업무 프로세스 설계 및 구축</li>
-            <li>가맹 SD 모듈 업무 프로세스 설계 및 구축</li>
-          </ul>
+        <div class="body">
+          <h3>대형 유통사, 마트·슈퍼 통합시스템 구축</h3>
+          <ul class="b"><li>마트·슈퍼 차세대 통합시스템 구축을 위한 업무 프로세스 표준화 및 To-Be 시스템 설계</li><li>행사(프로모션) 모듈 업무 프로세스 설계 및 구축</li><li>가맹 SD 모듈 업무 프로세스 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2023.11 – 2024.06</div>
-        <div>
-          <h3>삼성전자, D2C 통합 프로모션 관리시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>SAP Commerce Cloud·SAP CAR·SAP IS-Retail 간 인터페이스 연계 및 기능 설계</li>
-            <li>DX부문 SAP CAR 구축 (OPP: PoC 수행 및 기능 설계, POSDTA: Configuration)</li>
-            <li>SAP Commerce Cloud(Hybris) Configuration</li>
-          </ul>
+        <div class="body">
+          <h3>글로벌 전자 제조사, D2C 통합 프로모션 관리시스템 구축</h3>
+          <ul class="b"><li>SAP Commerce Cloud·SAP CAR·SAP IS-Retail 간 인터페이스 연계 및 기능 설계</li><li>SAP CAR 구축 (OPP: PoC 수행 및 기능 설계, POSDTA: Configuration)</li><li>SAP Commerce Cloud(Hybris) Configuration</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2022.07 – 2023.07</div>
-        <div>
-          <h3>현대자동차, 인증중고차 D2C 플랫폼 구축 2차<span class="role">Member</span></h3>
-          <ul>
-            <li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li>
-            <li>판매금융 재무 모듈(매입·매출·정산) 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li>
-          </ul>
+        <div class="body">
+          <h3>완성차 제조사, 중고차 D2C 플랫폼 구축 2차</h3>
+          <ul class="b"><li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li><li>판매금융 재무 모듈(매입·매출·정산) 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2021.12 – 2022.06</div>
-        <div>
-          <h3>현대자동차, 인증중고차 D2C 플랫폼 구축 1차<span class="role">Member</span></h3>
-          <ul>
-            <li>수익성 분석 모듈 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li>
-            <li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li>
-          </ul>
+        <div class="body">
+          <h3>완성차 제조사, 중고차 D2C 플랫폼 구축 1차</h3>
+          <ul class="b"><li>수익성 분석 모듈 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li><li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2021.06 – 2021.10</div>
-        <div>
-          <h3>삼성바이오로직스, CRM Integration<span class="role">Member</span></h3>
-          <ul>
-            <li>CMO·CDO·CRO 사업부 통합 영업관리 플랫폼 설계 및 구축 (Salesforce)</li>
-            <li>CMO 사업부 고객관리 및 수주 영업활동 프로세스 개선</li>
-          </ul>
+        <div class="body">
+          <h3>바이오 CDMO 기업, CRM Integration</h3>
+          <ul class="b"><li>CMO·CDO·CRO 사업부 통합 영업관리 플랫폼 설계 및 구축 (Salesforce)</li><li>CMO 사업부 고객관리 및 수주 영업활동 프로세스 개선</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2019.09 – 2020.07</div>
-        <div>
-          <h3>엠지손해보험, IFRS17 도입<span class="role">Member</span></h3>
-          <ul>
-            <li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 관리 시스템 설계 및 구축</li>
-            <li>IFRS17 사업비 가정(Assumption) 관리 프로세스 설계 및 구축</li>
-            <li>K-ICS(신지급여력제도) 대응 프로세스 설계 및 구축</li>
-          </ul>
+        <div class="body">
+          <h3>손해보험사 A, IFRS17 도입</h3>
+          <ul class="b"><li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 관리 시스템 설계 및 구축</li><li>IFRS17 사업비 가정(Assumption) 관리 프로세스 설계 및 구축</li><li>K-ICS(신지급여력제도) 대응 프로세스 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2019.01 – 2019.03</div>
-        <div>
-          <h3>악사손해보험, IFRS17 도입<span class="role">Member</span></h3>
-          <ul>
-            <li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 시스템 설계 및 구축</li>
-          </ul>
+        <div class="body">
+          <h3>손해보험사 B, IFRS17 도입</h3>
+          <ul class="b"><li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 시스템 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2018.04 – 2018.12</div>
-        <div>
-          <h3>소베텍, 다차원 손익 분석 시스템 개발<span class="role">Member</span></h3>
-          <ul>
-            <li>수익·비용 배부 기반 채널·고객·상품별 P&amp;L 결산 및 사업계획 수립을 위한 다차원 손익 분석 시스템 개발</li>
-            <li>기 구축 SAP QSA 솔루션의 웹(Web) 기반 전환 구현</li>
-          </ul>
+        <div class="body">
+          <h3>솔루션 기업, 다차원 손익 분석 시스템 개발</h3>
+          <ul class="b"><li>수익·비용 배부 기반 채널·고객·상품별 P&amp;L 결산 및 사업계획 수립을 위한 다차원 손익 분석 시스템 개발</li><li>기 구축 SAP QSA 솔루션의 웹(Web) 기반 전환 구현</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2018.03 – 2018.09</div>
-        <div>
-          <h3>울산도시공사, 구분회계 시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>지방공기업 구분회계 제도 도입 지원</li>
-            <li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li>
-          </ul>
+        <div class="body">
+          <h3>지방공기업 A, 구분회계 시스템 구축</h3>
+          <ul class="b"><li>지방공기업 구분회계 제도 도입 지원</li><li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li></ul>
         </div>
       </article>
-
       <article class="entry">
         <div class="period">2017.08 – 2018.02</div>
-        <div>
-          <h3>인천도시공사, 구분회계 시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>지방공기업 구분회계 제도 도입 지원</li>
-            <li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li>
-          </ul>
+        <div class="body">
+          <h3>지방공기업 B, 구분회계 시스템 구축</h3>
+          <ul class="b"><li>지방공기업 구분회계 제도 도입 지원</li><li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li></ul>
         </div>
       </article>
-
-    </div>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <dl class="rows">
-      <dt>단국대학교</dt><dd>회계학 학사</dd>
-    </dl>
-  </section>
-
-  <section>
-    <h2>Previous Experience</h2>
-    <dl class="rows">
-      <dt>SBT Global</dt><dd>2017 ~ 2021</dd>
-    </dl>
-  </section>
-
+  </div></section>
+  <section><h2>Education</h2><dl class="rows"><dt><span class="tag">단국대학교</span></dt><dd>회계학 학사</dd></dl></section>
+  <section><h2>Previous Experience</h2><dl class="rows"><dt><span class="tag">SBT Global</span></dt><dd>2017 ~ 2021</dd></dl></section>
 </div>
 
-<!-- 아래 4개 패널(p-fields, p-exp, p-edu, p-prev)에 탭별 상세 내역을 작성하세요 -->
 <div class="panel" id="p-fields" role="tabpanel" aria-labelledby="t-fields" hidden>
-  <section>
-    <h2>Fields of expertise</h2>
-    <dl class="rows">
-      <dt>유통</dt><dd>마트·슈퍼 통합시스템</dd>
-      <dt>전자</dt><dd>D2C 프로모션 관리 (SAP CAR)</dd>
-      <dt>자동차</dt><dd>중고차 D2C 플랫폼</dd>
-      <dt>바이오</dt><dd>CRM 영업관리 (Salesforce)</dd>
-      <dt>보험</dt><dd>IFRS17 사업비·K-ICS</dd>
-      <dt>공공</dt><dd>구분회계·손익 분석</dd>
-    </dl>
-  </section>
+  <section class="wide"><h2>Fields of Expertise<span class="count">산업별 수행 프로젝트</span></h2><div>
+      <div class="ind">
+        <div><span class="tag">유통</span></div>
+        <div><p class="focus">마트·슈퍼 통합시스템</p><ul><li><span>2024.06 – 2026.04</span>대형 유통사, 마트·슈퍼 통합시스템 구축</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">전자</span></div>
+        <div><p class="focus">D2C 프로모션 관리 (SAP CAR)</p><ul><li><span>2026.09 – Present</span>글로벌 전자 제조사, 콘텐츠 CoE 구축</li><li><span>2023.11 – 2024.06</span>글로벌 전자 제조사, D2C 통합 프로모션 관리시스템 구축</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">자동차</span></div>
+        <div><p class="focus">중고차 D2C 플랫폼</p><ul><li><span>2022.07 – 2023.07</span>완성차 제조사, 중고차 D2C 플랫폼 구축 2차</li><li><span>2021.12 – 2022.06</span>완성차 제조사, 중고차 D2C 플랫폼 구축 1차</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">바이오</span></div>
+        <div><p class="focus">CRM 영업관리 (Salesforce)</p><ul><li><span>2021.06 – 2021.10</span>바이오 CDMO 기업, CRM Integration</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">보험</span></div>
+        <div><p class="focus">IFRS17 사업비·K-ICS</p><ul><li><span>2019.09 – 2020.07</span>손해보험사 A, IFRS17 도입</li><li><span>2019.01 – 2019.03</span>손해보험사 B, IFRS17 도입</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">공공</span></div>
+        <div><p class="focus">구분회계·손익 분석</p><ul><li><span>2018.03 – 2018.09</span>지방공기업 A, 구분회계 시스템 구축</li><li><span>2017.08 – 2018.02</span>지방공기업 B, 구분회계 시스템 구축</li></ul></div>
+      </div>
+      <div class="ind">
+        <div><span class="tag">기타</span></div>
+        <div><p class="focus">다차원 손익 분석 솔루션 개발</p><ul><li><span>2018.04 – 2018.12</span>솔루션 기업, 다차원 손익 분석 시스템 개발</li></ul></div>
+      </div>
+  </div></section>
 </div>
 
-<div class="panel" id="p-exp" role="tabpanel" aria-labelledby="t-exp" hidden>
-  <section>
-    <h2>Key Experiences</h2>
-    <div>
-
+<div class="panel" id="p-experience" role="tabpanel" aria-labelledby="t-experience" hidden>
+  <section class="wide"><h2>Key Experiences<span class="count">11 projects · 2017 – Present</span></h2><div>
       <article class="entry">
-        <div class="period">2026.09 – 현재</div>
-        <div>
-          <h3>삼성전자, GBC 콘텐츠 CoE<span class="role">Member</span></h3>
-          <ul>
-            <li>본사(GBC·AIC)–총괄–법인 간 콘텐츠 CoE 운영모델 및 에이전시 R&amp;R 설계</li>
-            <li>동남아 9개 법인 콘텐츠 제작 현황·비용 전수 진단 및 Power BI 기반 분석 체계 구축</li>
-            <li>Celtra 기반 Master/Variation 콘텐츠 제작 자동화 운영 프로세스 및 내재화 방안 수립</li>
-          </ul>
+        <div class="period">2026.09 – Present<small>전자</small></div>
+        <div class="body">
+          <h3>글로벌 전자 제조사, 콘텐츠 CoE 구축</h3>
+          <ul class="b"><li>본사–지역총괄–해외법인 간 콘텐츠 CoE 운영모델 및 에이전시 R&amp;R 설계</li><li>해외 법인 콘텐츠 제작 현황·비용 전수 진단 및 Power BI 기반 분석 체계 구축</li><li>Master/Variation 콘텐츠 제작 자동화 운영 프로세스 및 내재화 방안 수립</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2024.06 – 2026.04</div>
-        <div>
-          <h3>롯데마트, 마트·슈퍼 통합시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>마트·슈퍼 차세대 통합시스템 구축을 위한 업무 프로세스 표준화 및 To-Be 시스템 설계</li>
-            <li>행사(프로모션) 모듈 업무 프로세스 설계 및 구축</li>
-            <li>가맹 SD 모듈 업무 프로세스 설계 및 구축</li>
-          </ul>
+        <div class="period">2024.06 – 2026.04<small>유통</small></div>
+        <div class="body">
+          <h3>대형 유통사, 마트·슈퍼 통합시스템 구축</h3>
+          <ul class="b"><li>마트·슈퍼 차세대 통합시스템 구축을 위한 업무 프로세스 표준화 및 To-Be 시스템 설계</li><li>행사(프로모션) 모듈 업무 프로세스 설계 및 구축</li><li>가맹 SD 모듈 업무 프로세스 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2023.11 – 2024.06</div>
-        <div>
-          <h3>삼성전자, D2C 통합 프로모션 관리시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>SAP Commerce Cloud·SAP CAR·SAP IS-Retail 간 인터페이스 연계 및 기능 설계</li>
-            <li>DX부문 SAP CAR 구축 (OPP: PoC 수행 및 기능 설계, POSDTA: Configuration)</li>
-            <li>SAP Commerce Cloud(Hybris) Configuration</li>
-          </ul>
+        <div class="period">2023.11 – 2024.06<small>전자</small></div>
+        <div class="body">
+          <h3>글로벌 전자 제조사, D2C 통합 프로모션 관리시스템 구축</h3>
+          <ul class="b"><li>SAP Commerce Cloud·SAP CAR·SAP IS-Retail 간 인터페이스 연계 및 기능 설계</li><li>SAP CAR 구축 (OPP: PoC 수행 및 기능 설계, POSDTA: Configuration)</li><li>SAP Commerce Cloud(Hybris) Configuration</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2022.07 – 2023.07</div>
-        <div>
-          <h3>현대자동차, 인증중고차 D2C 플랫폼 구축 2차<span class="role">Member</span></h3>
-          <ul>
-            <li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li>
-            <li>판매금융 재무 모듈(매입·매출·정산) 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li>
-          </ul>
+        <div class="period">2022.07 – 2023.07<small>자동차</small></div>
+        <div class="body">
+          <h3>완성차 제조사, 중고차 D2C 플랫폼 구축 2차</h3>
+          <ul class="b"><li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li><li>판매금융 재무 모듈(매입·매출·정산) 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2021.12 – 2022.06</div>
-        <div>
-          <h3>현대자동차, 인증중고차 D2C 플랫폼 구축 1차<span class="role">Member</span></h3>
-          <ul>
-            <li>수익성 분석 모듈 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li>
-            <li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li>
-          </ul>
+        <div class="period">2021.12 – 2022.06<small>자동차</small></div>
+        <div class="body">
+          <h3>완성차 제조사, 중고차 D2C 플랫폼 구축 1차</h3>
+          <ul class="b"><li>수익성 분석 모듈 업무 프로세스 설계, 데이터 모델링 및 시스템 구축</li><li>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2021.06 – 2021.10</div>
-        <div>
-          <h3>삼성바이오로직스, CRM Integration<span class="role">Member</span></h3>
-          <ul>
-            <li>CMO·CDO·CRO 사업부 통합 영업관리 플랫폼 설계 및 구축 (Salesforce)</li>
-            <li>CMO 사업부 고객관리 및 수주 영업활동 프로세스 개선</li>
-          </ul>
+        <div class="period">2021.06 – 2021.10<small>바이오</small></div>
+        <div class="body">
+          <h3>바이오 CDMO 기업, CRM Integration</h3>
+          <ul class="b"><li>CMO·CDO·CRO 사업부 통합 영업관리 플랫폼 설계 및 구축 (Salesforce)</li><li>CMO 사업부 고객관리 및 수주 영업활동 프로세스 개선</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2019.09 – 2020.07</div>
-        <div>
-          <h3>엠지손해보험, IFRS17 도입<span class="role">Member</span></h3>
-          <ul>
-            <li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 관리 시스템 설계 및 구축</li>
-            <li>IFRS17 사업비 가정(Assumption) 관리 프로세스 설계 및 구축</li>
-            <li>K-ICS(신지급여력제도) 대응 프로세스 설계 및 구축</li>
-          </ul>
+        <div class="period">2019.09 – 2020.07<small>보험</small></div>
+        <div class="body">
+          <h3>손해보험사 A, IFRS17 도입</h3>
+          <ul class="b"><li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 관리 시스템 설계 및 구축</li><li>IFRS17 사업비 가정(Assumption) 관리 프로세스 설계 및 구축</li><li>K-ICS(신지급여력제도) 대응 프로세스 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2019.01 – 2019.03</div>
-        <div>
-          <h3>악사손해보험, IFRS17 도입<span class="role">Member</span></h3>
-          <ul>
-            <li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 시스템 설계 및 구축</li>
-          </ul>
+        <div class="period">2019.01 – 2019.03<small>보험</small></div>
+        <div class="body">
+          <h3>손해보험사 B, IFRS17 도입</h3>
+          <ul class="b"><li>다차원 손익 분석 시스템 기반 IFRS17 보험 사업비 배부 시스템 설계 및 구축</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2018.04 – 2018.12</div>
-        <div>
-          <h3>소베텍, 다차원 손익 분석 시스템 개발<span class="role">Member</span></h3>
-          <ul>
-            <li>수익·비용 배부 기반 채널·고객·상품별 P&amp;L 결산 및 사업계획 수립을 위한 다차원 손익 분석 시스템 개발</li>
-            <li>기 구축 SAP QSA 솔루션의 웹(Web) 기반 전환 구현</li>
-          </ul>
+        <div class="period">2018.04 – 2018.12<small>기타</small></div>
+        <div class="body">
+          <h3>솔루션 기업, 다차원 손익 분석 시스템 개발</h3>
+          <ul class="b"><li>수익·비용 배부 기반 채널·고객·상품별 P&amp;L 결산 및 사업계획 수립을 위한 다차원 손익 분석 시스템 개발</li><li>기 구축 SAP QSA 솔루션의 웹(Web) 기반 전환 구현</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2018.03 – 2018.09</div>
-        <div>
-          <h3>울산도시공사, 구분회계 시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>지방공기업 구분회계 제도 도입 지원</li>
-            <li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li>
-          </ul>
+        <div class="period">2018.03 – 2018.09<small>공공</small></div>
+        <div class="body">
+          <h3>지방공기업 A, 구분회계 시스템 구축</h3>
+          <ul class="b"><li>지방공기업 구분회계 제도 도입 지원</li><li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li></ul>
         </div>
       </article>
-
       <article class="entry">
-        <div class="period">2017.08 – 2018.02</div>
-        <div>
-          <h3>인천도시공사, 구분회계 시스템 구축<span class="role">Member</span></h3>
-          <ul>
-            <li>지방공기업 구분회계 제도 도입 지원</li>
-            <li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li>
-          </ul>
+        <div class="period">2017.08 – 2018.02<small>공공</small></div>
+        <div class="body">
+          <h3>지방공기업 B, 구분회계 시스템 구축</h3>
+          <ul class="b"><li>지방공기업 구분회계 제도 도입 지원</li><li>구분회계 업무 분석 및 원가 배부 프로세스 설계</li></ul>
         </div>
       </article>
-
-    </div>
-  </section>
+  </div></section>
 </div>
 
-<div class="panel" id="p-edu" role="tabpanel" aria-labelledby="t-edu" hidden>
-  <section>
-    <h2>Education</h2>
-    <dl class="rows">
-      <dt>단국대학교</dt><dd>회계학 학사</dd>
-    </dl>
-  </section>
+<div class="panel" id="p-education" role="tabpanel" aria-labelledby="t-education" hidden>
+  <section><h2>Education</h2><dl class="rows"><dt><span class="tag">단국대학교</span></dt><dd>회계학 학사</dd></dl></section>
 </div>
 
-<div class="panel" id="p-prev" role="tabpanel" aria-labelledby="t-prev" hidden>
-  <section>
-    <h2>Previous Experience</h2>
-    <dl class="rows">
-      <dt>SBT Global</dt><dd>2017 ~ 2021</dd>
-    </dl>
-  </section>
+<div class="panel" id="p-previous" role="tabpanel" aria-labelledby="t-previous" hidden>
+  <section><h2>Previous Experience</h2><dl class="rows"><dt><span class="tag">SBT Global</span></dt><dd>2017 ~ 2021</dd></dl></section>
 </div>
 
 </main>
@@ -456,23 +358,38 @@
 <script>
 (function(){
   var tabs=[].slice.call(document.querySelectorAll('nav.tabs [role="tab"]'));
-  function show(tab){
+  var nav=document.querySelector('nav.tabs'), box=document.querySelector('.tabscroll');
+  function edge(){ if(!nav||!box)return;
+    box.classList.toggle('more', nav.scrollLeft+nav.clientWidth < nav.scrollWidth-4); }
+  function show(tab,push){
     tabs.forEach(function(t){
       var on=t===tab;
       t.setAttribute('aria-selected',on);
       t.tabIndex=on?0:-1;
       document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
     });
+    if(tab.scrollIntoView) tab.scrollIntoView({block:'nearest',inline:'nearest'});
+    if(push){ var k=tab.dataset.key;
+      try{ history.replaceState(null,'',k==='overview'?location.pathname+location.search:'#'+k); }catch(e){} }
+    edge();
   }
   tabs.forEach(function(t,i){
-    t.addEventListener('click',function(){show(t)});
+    t.addEventListener('click',function(){show(t,true)});
     t.addEventListener('keydown',function(e){
       var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;
       if(n===null)return;
-      var next=tabs[(n+tabs.length)%tabs.length];
-      next.focus();show(next);
+      var next=tabs[(n+tabs.length)%tabs.length]; next.focus(); show(next,true);
     });
   });
+  function fromHash(){
+    var k=(location.hash||'').slice(1);
+    var t=tabs.filter(function(x){return x.dataset.key===k})[0]||tabs[0];
+    show(t,false);
+  }
+  nav.addEventListener('scroll',edge,{passive:true});
+  window.addEventListener('resize',edge);
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
 })();
 </script>
 </body>
