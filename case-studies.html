@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김성태 | Case Studies</title>
+<meta name="description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
+<meta property="og:type" content="website">
+<meta property="og:title" content="김성태 | Case Studies">
+<meta property="og:description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
+<meta property="og:url" content="https://aerrfa0.github.io/case-studies.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f2a47'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2a47; --accent:#1f5f9e; --tint:#e8f0f9; --ink:#1b2430;
+    --muted:#5f6b7a; --line:#e1e6ed; --bg:#f3f5f8; --hdr-sub:#c9d6e6; --glow:#5aa0e6; --soft:#9fb6d1;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);word-break:keep-all;
+    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7}
+  a{color:inherit}
+  .wrap{max-width:960px;margin:0 auto;padding:0 40px}
+
+  header.band{background:var(--navy);color:#fff;padding:0 0 48px}
+  header.band .topnav{padding:22px 0 18px;margin-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+
+  .topnav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 28px}
+  .brand{color:#fff;text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.02em;white-space:nowrap}
+  .brand small{font-weight:400;font-size:13px;color:#9fb6d1;margin-left:8px;letter-spacing:0}
+  .menu{display:flex;gap:2px 24px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none;max-width:100%}
+  .menu::-webkit-scrollbar{display:none}
+  .menu a{display:block;padding:6px 0 4px;color:#c9d6e6;text-decoration:none;font-size:14.5px;font-weight:500;
+    white-space:nowrap;border-bottom:2px solid transparent}
+  .menu a:hover{color:#fff}
+  .menu a[aria-current="page"]{color:#fff;border-bottom-color:#5aa0e6}
+  .menu a:focus-visible,.brand:focus-visible{outline:2px solid #5aa0e6;outline-offset:3px}
+  @media (max-width:760px){ .menu{gap:2px 20px} .menu a{font-size:14px} }
+
+  .lead{margin:12px 0 0;font-size:18px;line-height:1.6;color:var(--hdr-sub);max-width:40em}
+  .alt{margin:16px 0 0;font-size:13.5px}
+  .alt a{color:var(--hdr-sub);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+  .alt a:hover{color:#fff;border-bottom-color:#fff}
+  .foot{padding:8px 0 36px;color:var(--muted);font-size:12.5px}
+  .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px}
+  .foot a{text-decoration:none}
+  .foot a:hover{color:var(--accent)}
+  h1{margin:0;font-size:44px;line-height:1.15;font-weight:700;letter-spacing:.04em}
+  .en{margin:6px 0 0;font-size:16px;color:var(--hdr-sub)}
+  .role{margin:24px 0 0;font-size:19px;font-weight:500;line-height:1.5}
+  .sub{margin:4px 0 0;color:var(--hdr-sub)}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin:22px 0 0;padding:16px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);list-style:none;font-size:14.5px}
+  .contact span{color:#9fb6d1;margin-right:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+  .contact a:hover{border-bottom-color:#fff}
+
+  @media (max-width:760px){
+    .wrap{padding:0 20px}
+    header.band{padding:0 0 32px}
+    header.band .topnav{padding:16px 0 12px;margin-bottom:26px}
+    h1{font-size:32px}
+    .lead{font-size:16px}
+    .role{font-size:17px;margin-top:18px}
+    .contact{flex-direction:column}
+  }
+
+  main.wrap{padding-top:32px;padding-bottom:64px}
+  p{margin:0}
+  section{display:grid;grid-template-columns:190px 1fr;column-gap:40px;
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:34px 40px;margin-bottom:20px}
+  section.wide{display:block}
+  section.wide>h2{margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  h2{margin:0;font-size:17px;line-height:1.6;font-weight:700;color:var(--navy)}
+  .tag{display:inline-block;background:var(--tint);color:var(--accent);font-weight:700;font-size:13.5px;
+    padding:2px 12px;border-radius:4px;line-height:1.7;white-space:nowrap}
+  .prose{line-height:1.9}
+  .prose p+p{margin-top:12px}
+  dl.rows{margin:0;display:grid;grid-template-columns:150px 1fr;row-gap:16px;column-gap:24px;align-items:baseline}
+  dl.rows dt{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  dl.rows dd{margin:0}
+  dl.rows dd small{display:block;margin-top:2px;color:var(--muted);font-size:13.5px}
+  .pills{display:flex;flex-wrap:wrap;gap:6px 8px}
+  .pills span{font-size:13.5px;line-height:1.6;padding:2px 10px;border:1px solid var(--line);border-radius:4px;background:#f8fafc}
+  .next{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 8px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:6px;border:1px solid var(--accent);
+    color:var(--accent);background:#fff;text-decoration:none;font-weight:700;font-size:15px}
+  .btn:hover{background:var(--tint)}
+  .btn.primary{background:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--navy);border-color:var(--navy)}
+  .btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  @media (max-width:760px){
+    section{grid-template-columns:1fr;row-gap:16px;padding:24px 20px}
+    dl.rows{grid-template-columns:1fr;row-gap:2px}
+    dl.rows dd{margin-bottom:14px}
+    .next{flex-direction:column}
+    .btn{justify-content:center}
+  }
+
+  .intro{margin:0 0 20px;color:var(--muted);font-size:14px}
+  .toc{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 20px;padding:0;list-style:none}
+  .toc a{display:block;height:100%;background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 16px;text-decoration:none}
+  .toc a:hover{border-color:var(--accent)}
+  .toc small{display:block;color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+  .toc b{display:block;margin-top:2px;font-size:14.5px;line-height:1.45;color:var(--navy)}
+  article.case{background:#fff;border:1px solid var(--line);border-radius:6px;padding:34px 40px;margin-bottom:20px;scroll-margin-top:16px}
+  .case-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-bottom:10px}
+  .case-head .meta{color:var(--muted);font-size:13.5px;font-variant-numeric:tabular-nums}
+  .case-head .now{color:var(--accent);font-weight:700;font-size:13px}
+  .case h2{font-size:22px;line-height:1.4;margin:0 0 8px}
+  .case .ctx{line-height:1.85;max-width:46em}
+  .case-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;margin-top:26px}
+  .case h3{margin:0 0 10px;font-size:13.5px;font-weight:700;color:var(--muted)}
+  .did{margin:0;padding:0;list-style:none}
+  .did li{display:grid;grid-template-columns:128px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+  .did li:first-child{border-top:0;padding-top:0}
+  .did b{color:var(--accent);font-size:14px;line-height:1.6}
+  figure.flow{margin:0;background:var(--bg);border-radius:6px;padding:22px 18px}
+  .fr{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .fn{width:100%;max-width:260px;background:#fff;border:1px solid #c9d6e6;border-radius:6px;padding:10px 14px;text-align:center}
+  .fn b{display:block;font-size:14px;line-height:1.4;color:var(--navy)}
+  .fn small{display:block;margin-top:2px;font-size:12px;color:var(--muted)}
+  .fn.hl{background:var(--navy);border-color:var(--navy)}
+  .fn.hl b{color:#fff}
+  .fn.hl small{color:var(--hdr-sub)}
+  .fx{display:inline-block;color:var(--accent);font-weight:700;font-size:16px;line-height:1;transform:rotate(90deg)}
+  .fb{margin-top:14px;text-align:center;font-size:13px;font-weight:700;color:var(--accent);background:var(--tint);border-radius:4px;padding:6px 10px}
+  .keys{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+  .keys span{font-size:12.5px;padding:2px 10px;border:1px solid var(--line);border-radius:4px;background:#fff}
+  @media (max-width:860px){
+    .toc{grid-template-columns:1fr 1fr}
+    .case-body{grid-template-columns:1fr;gap:24px}
+  }
+  @media (max-width:760px){
+    article.case{padding:24px 20px}
+    .case h2{font-size:19px}
+    .did li{grid-template-columns:1fr;gap:2px}
+  }
+</style>
+</head>
+<body>
+<header class="band"><div class="wrap">
+  <nav class="topnav" aria-label="Main"><a class="brand" href="./">김성태<small>Sung-tae Kim</small></a><ul class="menu"><li><a href="about.html">About</a></li><li><a href="resume.html">Resume</a></li><li><a href="case-studies.html" aria-current="page">Case Studies</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <h1>Case Studies</h1>
+  <p class="lead">대표 프로젝트 4건을 배경, 수행 내용, 범위로 정리했습니다.</p>
+</div></header>
+
+<main class="wrap">
+  <p class="intro">고객사명은 공개하지 않습니다. 고객사명이 포함된 이력은 <a href="resume-full.html">Resume 전체본</a>(비밀번호 필요)에서 볼 수 있습니다.</p>
+  <ul class="toc"><li><a href="#content-coe"><small>2026.09 – Present</small><b>콘텐츠 CoE 구축</b></a></li><li><a href="#retail-integration"><small>2024.06 – 2026.04</small><b>마트·슈퍼 통합시스템 구축</b></a></li><li><a href="#d2c-promotion"><small>2023.11 – 2024.06</small><b>D2C 통합 프로모션 관리시스템 구축</b></a></li><li><a href="#used-car-d2c"><small>2021.12 – 2023.07</small><b>중고차 D2C 플랫폼 구축 (1·2차)</b></a></li></ul>
+  <article class="case" id="content-coe">
+    <div class="case-head"><span class="tag">전자</span><span class="meta">2026.09 – Present</span><span class="now">진행 중</span></div>
+    <h2>글로벌 전자 제조사, 콘텐츠 CoE 구축</h2>
+    <p class="ctx">본사, 지역총괄, 해외법인에 걸친 콘텐츠 제작과 에이전시 운영을 하나의 CoE(Center of Excellence) 운영 체계로 정리하는 프로젝트입니다.</p>
+    <div class="case-body">
+      <div><h3>수행 내용</h3><ul class="did"><li><b>현황 진단</b><span>해외 법인의 콘텐츠 제작 현황과 비용을 전수 진단하고, Power BI 기반 분석 체계를 구축</span></li><li><b>운영모델 설계</b><span>본사–지역총괄–해외법인 간 콘텐츠 CoE 운영모델과 에이전시 R&amp;R 설계</span></li><li><b>제작 자동화</b><span>Master/Variation 콘텐츠 제작 자동화 운영 프로세스와 내재화 방안 수립</span></li></ul></div>
+      <div><h3>범위</h3><figure class="flow" aria-label="프로젝트 범위"><div class="fr"><div class="fn"><b>본사</b></div><span class="fx" aria-hidden="true">→</span><div class="fn"><b>지역총괄</b></div><span class="fx" aria-hidden="true">→</span><div class="fn"><b>해외법인</b></div></div><div class="fb">콘텐츠 CoE 운영모델 · 에이전시 R&amp;R</div></figure><div class="keys"><span>운영모델</span><span>R&amp;R</span><span>비용 진단</span><span>Power BI</span><span>콘텐츠 제작 자동화</span></div></div>
+    </div>
+  </article>
+  <article class="case" id="retail-integration">
+    <div class="case-head"><span class="tag">유통</span><span class="meta">2024.06 – 2026.04 · 23개월</span></div>
+    <h2>대형 유통사, 마트·슈퍼 통합시스템 구축</h2>
+    <p class="ctx">마트와 슈퍼 두 업태의 업무와 시스템을 하나의 차세대 통합시스템으로 구축한 프로젝트입니다.</p>
+    <div class="case-body">
+      <div><h3>수행 내용</h3><ul class="did"><li><b>프로세스 표준화</b><span>마트·슈퍼 차세대 통합시스템 구축을 위한 업무 프로세스 표준화와 To-Be 시스템 설계</span></li><li><b>행사(프로모션)</b><span>행사 모듈 업무 프로세스 설계 및 구축</span></li><li><b>가맹 SD</b><span>가맹 SD 모듈 업무 프로세스 설계 및 구축</span></li></ul></div>
+      <div><h3>범위</h3><figure class="flow" aria-label="프로젝트 범위"><div class="fr"><div class="fn"><b>마트</b></div><span class="fx" aria-hidden="true">+</span><div class="fn"><b>슈퍼</b></div><span class="fx" aria-hidden="true">→</span><div class="fn hl"><b>차세대 통합시스템</b><small>행사 · 가맹 SD</small></div></div><div class="fb">업무 프로세스 표준화 · To-Be 설계</div></figure><div class="keys"><span>프로세스 표준화</span><span>To-Be 설계</span><span>행사(프로모션)</span><span>가맹 SD</span></div></div>
+    </div>
+  </article>
+  <article class="case" id="d2c-promotion">
+    <div class="case-head"><span class="tag">전자</span><span class="meta">2023.11 – 2024.06 · 8개월</span></div>
+    <h2>글로벌 전자 제조사, D2C 통합 프로모션 관리시스템 구축</h2>
+    <p class="ctx">D2C(소비자 직접 판매) 채널의 프로모션을 통합 관리하기 위해 SAP Commerce Cloud, SAP CAR, SAP IS-Retail을 연계한 프로젝트입니다.</p>
+    <div class="case-body">
+      <div><h3>수행 내용</h3><ul class="did"><li><b>연계·기능 설계</b><span>SAP Commerce Cloud·SAP CAR·SAP IS-Retail 간 인터페이스 연계 및 기능 설계</span></li><li><b>SAP CAR 구축</b><span>OPP: PoC 수행 및 기능 설계, POSDTA: Configuration</span></li><li><b>Commerce Cloud</b><span>SAP Commerce Cloud(Hybris) Configuration</span></li></ul></div>
+      <div><h3>범위</h3><figure class="flow" aria-label="프로젝트 범위"><div class="fr"><div class="fn"><b>SAP Commerce Cloud</b><small>Hybris</small></div><span class="fx" aria-hidden="true">⇄</span><div class="fn hl"><b>SAP CAR</b><small>OPP · POSDTA</small></div><span class="fx" aria-hidden="true">⇄</span><div class="fn"><b>SAP IS-Retail</b></div></div><div class="fb">인터페이스 연계 · 기능 설계</div></figure><div class="keys"><span>SAP CAR</span><span>SAP Commerce Cloud</span><span>SAP IS-Retail</span><span>PoC</span><span>Configuration</span></div></div>
+    </div>
+  </article>
+  <article class="case" id="used-car-d2c">
+    <div class="case-head"><span class="tag">자동차</span><span class="meta">2021.12 – 2023.07 · 20개월 · 1차 2021.12–2022.06 · 2차 2022.07–2023.07</span></div>
+    <h2>완성차 제조사, 중고차 D2C 플랫폼 구축 (1·2차)</h2>
+    <p class="ctx">완성차 제조사가 직접 운영하는 중고차 D2C 플랫폼을 1차와 2차에 걸쳐 구축한 프로젝트입니다.</p>
+    <div class="case-body">
+      <div><h3>수행 내용</h3><ul class="did"><li><b>위탁·중개판매</b><span>위탁판매·중개판매 업무 프로세스 설계 및 시스템 구축 (1·2차)</span></li><li><b>수익성 분석</b><span>수익성 분석 모듈 업무 프로세스 설계, 데이터 모델링 및 시스템 구축 (1차)</span></li><li><b>판매금융 재무</b><span>판매금융 재무 모듈(매입·매출·정산) 업무 프로세스 설계, 데이터 모델링 및 시스템 구축 (2차)</span></li></ul></div>
+      <div><h3>범위</h3><figure class="flow" aria-label="프로젝트 범위"><div class="fr"><div class="fn"><b>위탁·중개판매</b><small>1·2차</small></div><span class="fx" aria-hidden="true">→</span><div class="fn hl"><b>판매금융 재무</b><small>매입 · 매출 · 정산</small></div><span class="fx" aria-hidden="true">→</span><div class="fn"><b>수익성 분석</b><small>1차</small></div></div><div class="fb">업무 프로세스 설계 · 데이터 모델링 · 시스템 구축</div></figure><div class="keys"><span>위탁·중개판매</span><span>판매금융</span><span>매입·매출·정산</span><span>수익성 분석</span><span>데이터 모델링</span></div></div>
+    </div>
+  </article>
+  <div class="next">
+    <a class="btn primary" href="resume.html">전체 이력 보기 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn" href="contact.html">연락하기 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</main>
+<footer class="foot"><div class="wrap"><span>© 2026 김성태</span><a href="mailto:aerrfa@gmail.com">aerrfa@gmail.com</a></div></footer>
+</body>
+</html>
