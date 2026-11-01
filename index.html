@@ -9,97 +9,389 @@
 <meta property="og:title" content="김성태">
 <meta property="og:description" content="업무 프로세스 설계·시스템 구축 | 커머스·D2C, CRM(Salesforce), SAP 약 9년">
 <meta property="og:url" content="https://aerrfa0.github.io/">
+<meta name="theme-color" content="#0a1d33">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230f2a47'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0f2a47; --accent:#1f5f9e; --tint:#e8f0f9; --ink:#1b2430;
-    --muted:#5f6b7a; --line:#e1e6ed; --bg:#f3f5f8; --hdr-sub:#c9d6e6;
+    --muted:#5f6b7a; --line:#e1e6ed; --bg:#f3f5f8;
+    --deep:#0a1d33; --glow:#5aa0e6; --hdr-sub:#c9d6e6; --soft:#9fb6d1;
+    --out:cubic-bezier(.16,1,.3,1);
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7}
-  a{color:inherit}
+    font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:15px;line-height:1.7;word-break:keep-all}
   .wrap{max-width:960px;margin:0 auto;padding:0 40px}
 
-  header.band{background:var(--navy);color:#fff;padding:56px 0 48px}
-  .home{display:inline-block;margin-bottom:18px;color:var(--hdr-sub);font-size:14px;text-decoration:none}
-  .home:hover{color:#fff}
-  h1{margin:0;font-size:44px;line-height:1.15;font-weight:700;letter-spacing:.04em}
-  .en{margin:6px 0 0;font-size:16px;color:var(--hdr-sub)}
-  .role{margin:24px 0 0;font-size:19px;font-weight:500;line-height:1.5}
-  .sub{margin:4px 0 0;color:var(--hdr-sub)}
-  .contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin:22px 0 0;padding:16px 0 0;
+  /* ---------- stage ---------- */
+  .reel{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+    color:#fff;background:radial-gradient(110% 80% at 78% 8%,#16406b 0%,var(--deep) 52%,#06152a 100%)}
+  #net{position:absolute;inset:0;width:100%;height:100%;opacity:.6}
+  .progress{position:absolute;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.08);z-index:4}
+  .progress i{display:block;height:100%;background:var(--glow);transform-origin:left center}
+  .reel.done .progress{opacity:0;transition:opacity .6s .4s}
+
+  .scenes{position:absolute;inset:0;z-index:2;pointer-events:none}
+  .sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:0 24px;text-align:center;opacity:0}
+
+  /* scene 1 — years */
+  .s1 .yr{font-size:clamp(84px,26vw,232px);line-height:1;font-weight:900;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .s1 .rule{width:min(560px,70vw);height:2px;margin:22px 0 18px;background:linear-gradient(90deg,transparent,var(--glow),transparent)}
+  .s1 .cap{margin:0;font-size:clamp(17px,4.2vw,24px);font-weight:500;color:var(--hdr-sub)}
+
+  /* scene 2 — role */
+  .s2 .stack{display:grid}
+  .s2 .pair{grid-area:1/1;display:flex;flex-direction:column;align-items:center}
+  .s2 .mask{display:block;overflow:hidden;padding:0 .04em}
+  .s2 .w{display:block;font-size:clamp(56px,16vw,156px);line-height:1.02;font-weight:900;letter-spacing:-.025em}
+  .s2 .w.o{color:transparent;-webkit-text-stroke:2px #fff}
+  .s2 .kr{margin:20px 0 0;font-size:clamp(16px,4vw,22px);font-weight:500;color:var(--hdr-sub)}
+  .s2 .sweep{position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--glow) 45%,#fff 50%,var(--glow) 55%,transparent);transform:translateX(-100%)}
+
+  /* scene 3 — industries */
+  .s3 .flash{position:absolute;inset:0;background:var(--glow);opacity:0}
+  .s3 .inds{display:grid}
+  .s3 .ind{grid-area:1/1;display:flex;flex-direction:column;align-items:center}
+  .s3 .ind b{font-size:clamp(84px,24vw,210px);line-height:1;font-weight:900;letter-spacing:-.03em}
+  .s3 .ind em{font-style:normal;margin-top:10px;font-size:clamp(15px,3.6vw,20px);font-weight:500;letter-spacing:.14em;color:var(--glow)}
+  .s3 .ind p{margin:14px 0 0;font-size:clamp(16px,4vw,22px);color:var(--hdr-sub)}
+  .s3 .segs{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);display:flex;gap:8px;width:min(360px,70vw)}
+  .s3 .segs span{flex:1;height:3px;background:rgba(255,255,255,.14);overflow:hidden}
+  .s3 .segs i{display:block;height:100%;background:#fff;transform-origin:left center}
+
+  /* scene 4 — stack */
+  .s4 .row{position:absolute;left:0;width:100%;overflow:hidden;white-space:nowrap}
+  .s4 .r1{top:9%} .s4 .r2{top:25%} .s4 .r3{bottom:25%} .s4 .r4{bottom:9%}
+  .s4 .track{display:inline-flex;gap:.9em;font-size:clamp(30px,7.4vw,76px);font-weight:900;line-height:1.1;letter-spacing:-.01em}
+  .s4 .track span{flex:none}
+  .s4 .o{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.75)}
+  .s4 .d{color:rgba(255,255,255,.28)}
+  .s4 .count{position:relative;display:flex;flex-direction:column;align-items:center;padding:6px 28px;
+    background:radial-gradient(closest-side,rgba(6,21,42,.95),rgba(6,21,42,0))}
+  .s4 .count b{font-size:clamp(108px,30vw,232px);line-height:.95;font-weight:900;font-variant-numeric:tabular-nums}
+  .s4 .count span{font-size:clamp(17px,4.2vw,24px);font-weight:500;color:var(--hdr-sub)}
+
+  /* scene 5 — timeline */
+  .s5{transform-origin:calc(50% + min(410px,42vw)) 50%}
+  .s5 .tl{position:relative;width:min(820px,84vw);height:120px}
+  .s5 .tl-line{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:rgba(255,255,255,.35);transform-origin:left center}
+  .s5 .dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;
+    box-shadow:0 0 0 4px rgba(90,160,230,.28),0 0 18px rgba(90,160,230,.9);transform:translate(-50%,-50%)}
+  .s5 .lab{position:absolute;top:50%;font-size:13px;font-weight:500;color:var(--hdr-sub);white-space:nowrap;transform:translate(-50%,-34px)}
+  .s5 .lab.dn{transform:translate(-50%,20px)}
+  .s5 .ends{display:flex;justify-content:space-between;width:min(820px,84vw);margin-top:6px;font-size:clamp(15px,3.6vw,19px);font-weight:700}
+  .s5 .ends span:last-child{color:var(--glow)}
+
+  /* ---------- final frame ---------- */
+  .final{position:relative;z-index:3;width:100%;padding:88px 0 104px}
+  .reel.playing .final{pointer-events:none}
+  .final h1{margin:0;display:flex;gap:.02em;font-size:clamp(64px,14vw,128px);line-height:1;font-weight:900;letter-spacing:.02em}
+  .final h1 span{display:inline-block}
+  .final .en{margin:12px 0 0;font-size:clamp(17px,3.6vw,20px);color:var(--hdr-sub)}
+  .final .role{margin:30px 0 0;font-size:clamp(19px,4.4vw,24px);font-weight:700;line-height:1.45}
+  .final .sub{margin:6px 0 0;color:var(--hdr-sub)}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 28px;margin:26px 0 0;padding:16px 0 0;
     border-top:1px solid rgba(255,255,255,.16);list-style:none;font-size:14.5px}
-  .contact span{color:#9fb6d1;margin-right:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+  .contact span{color:var(--soft);margin-right:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
   .contact a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
   .contact a:hover{border-bottom-color:#fff}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;max-width:640px}
+  .cta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 22px;border-radius:6px;
+    text-decoration:none;font-size:16px;font-weight:700;border:1px solid rgba(255,255,255,.35);transition:background .2s,border-color .2s}
+  .cta small{display:block;font-size:12.5px;font-weight:400;margin-top:2px}
+  .cta.primary{background:#fff;color:var(--navy);border-color:#fff}
+  .cta.primary small{color:var(--muted)}
+  .cta.primary:hover{background:var(--tint)}
+  .cta.secondary{color:#fff}
+  .cta.secondary small{color:var(--soft)}
+  .cta.secondary:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .cta:focus-visible,.ctl:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+  .cta svg{flex:none}
 
-  @media (max-width:760px){
-    .wrap{padding:0 20px}
-    header.band{padding:36px 0 32px}
-    h1{font-size:32px}
-    .role{font-size:17px;margin-top:18px}
-    .contact{flex-direction:column}
-  }
+  .ctl{position:absolute;right:24px;bottom:22px;z-index:5;appearance:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;
+    font:inherit;font-size:13.5px;font-weight:500;color:var(--hdr-sub);
+    background:rgba(6,21,42,.55);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+  .ctl:hover{color:#fff;border-color:rgba(255,255,255,.6)}
 
-  body{min-height:100vh;display:flex;flex-direction:column}
-  main{flex:1;padding:40px 0 56px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 40px}
-  h2{margin:0 0 14px;font-size:17px;font-weight:700;color:var(--navy)}
+  /* ---------- below the fold ---------- */
+  main{padding:40px 0 56px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px 40px}
+  .card h2{margin:0 0 14px;font-size:17px;font-weight:700;color:var(--navy)}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
   .chips a{display:inline-block;background:var(--tint);color:var(--accent);font-weight:500;font-size:14px;
     padding:5px 14px;border-radius:4px;text-decoration:none;border:1px solid transparent}
   .chips a:hover{border-color:var(--accent)}
-  .now{margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+  .now{margin:24px 0 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
   .now b{color:var(--navy);font-weight:700;margin-right:8px}
-  .actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-  .cta{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px;border-radius:6px;
-    text-decoration:none;font-size:16px;font-weight:700;border:1px solid var(--accent)}
-  .cta small{display:block;font-size:12.5px;font-weight:400;margin-top:2px}
-  .cta.primary{background:var(--accent);color:#fff}
-  .cta.primary small{color:#d6e4f3}
-  .cta.primary:hover{background:var(--navy);border-color:var(--navy)}
-  .cta.secondary{background:#fff;color:var(--accent)}
-  .cta.secondary small{color:var(--muted)}
-  .cta.secondary:hover{background:var(--tint)}
-  .cta:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
   footer{padding:0 0 32px;text-align:center;color:var(--muted);font-size:12.5px}
+
   @media (max-width:760px){
-    main{padding:28px 0 40px}
-    .card{padding:24px 20px}
+    .wrap{padding:0 20px}
+    .final{padding:72px 0 96px}
     .actions{grid-template-columns:1fr}
+    .contact{flex-direction:column}
+    .card{padding:24px 20px}
+    .s5 .lab{display:none}
+    .ctl{right:16px;bottom:16px}
   }
 </style>
 </head>
 <body>
-<header class="band"><div class="wrap">
-  
-  <h1>김성태</h1>
-  <p class="en">Sung-tae Kim</p>
-  <p class="role">업무 프로세스 설계 · 시스템 구축</p>
-  <p class="sub">커머스·D2C, CRM(Salesforce), SAP 영역 약 9년</p>
-  <ul class="contact">
-    <li><span>Email</span><a href="mailto:aerrfa@gmail.com">aerrfa@gmail.com</a></li>
-    <li><span>Phone</span><a href="tel:+821053289918">+82 10 5328 9918</a></li>
-  </ul>
-</div></header>
+
+<section class="reel" id="reel">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="progress" aria-hidden="true"><i></i></div>
+
+  <div class="scenes" aria-hidden="true">
+    <div class="sc s1">
+      <div class="yr" id="yr">2017</div>
+      <div class="rule"></div>
+      <p class="cap">약 9년의 경력</p>
+    </div>
+
+    <div class="sc s2">
+      <div class="sweep"></div>
+      <div class="stack">
+        <div class="pair pa">
+          <span class="mask"><span class="w">Process</span></span>
+          <span class="mask"><span class="w o">Design</span></span>
+          <p class="kr">업무 프로세스 설계</p>
+        </div>
+        <div class="pair pb">
+          <span class="mask"><span class="w">System</span></span>
+          <span class="mask"><span class="w o">Build</span></span>
+          <p class="kr">시스템 구축</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sc s3">
+      <div class="flash"></div>
+      <div class="inds">
+        <div class="ind"><b>유통</b><em>Retail</em><p>마트·슈퍼 통합시스템</p></div>
+        <div class="ind"><b>전자</b><em>Electronics</em><p>D2C 프로모션 관리 (SAP CAR)</p></div>
+        <div class="ind"><b>자동차</b><em>Automotive</em><p>중고차 D2C 플랫폼</p></div>
+        <div class="ind"><b>바이오</b><em>Bio</em><p>CRM 영업관리 (Salesforce)</p></div>
+        <div class="ind"><b>보험</b><em>Insurance</em><p>IFRS17 사업비·K-ICS</p></div>
+        <div class="ind"><b>공공</b><em>Public</em><p>구분회계·손익 분석</p></div>
+      </div>
+      <div class="segs"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+    </div>
+
+    <div class="sc s4">
+      <div class="row r1"><div class="track"><span class="o">SAP Commerce Cloud</span><span class="d">Hybris</span><span class="o">SAP CAR</span><span class="d">SAP IS-Retail</span><span class="o">SAP Commerce Cloud</span><span class="d">Hybris</span><span class="o">SAP CAR</span><span class="d">SAP IS-Retail</span></div></div>
+      <div class="row r2"><div class="track"><span class="d">Salesforce</span><span class="o">Power BI</span><span class="d">Data Modeling</span><span class="o">To-Be Design</span><span class="d">Salesforce</span><span class="o">Power BI</span><span class="d">Data Modeling</span><span class="o">To-Be Design</span></div></div>
+      <div class="row r3"><div class="track"><span class="o">IFRS17</span><span class="d">K-ICS</span><span class="o">D2C Platform</span><span class="d">CRM</span><span class="o">IFRS17</span><span class="d">K-ICS</span><span class="o">D2C Platform</span><span class="d">CRM</span></div></div>
+      <div class="row r4"><div class="track"><span class="d">P&amp;L Analysis</span><span class="o">Cost Allocation</span><span class="d">Promotion</span><span class="o">Settlement</span><span class="d">P&amp;L Analysis</span><span class="o">Cost Allocation</span><span class="d">Promotion</span><span class="o">Settlement</span></div></div>
+      <div class="count"><b id="pc">0</b><span>projects</span></div>
+    </div>
+
+    <div class="sc s5">
+      <div class="tl" id="tl"><div class="tl-line"></div></div>
+      <div class="ends"><span>2017</span><span>Present</span></div>
+    </div>
+  </div>
+
+  <div class="final">
+    <div class="wrap">
+      <h1 aria-label="김성태"><span aria-hidden="true">김</span><span aria-hidden="true">성</span><span aria-hidden="true">태</span></h1>
+      <p class="en">Sung-tae Kim</p>
+      <p class="role">업무 프로세스 설계 · 시스템 구축</p>
+      <p class="sub">커머스·D2C, CRM(Salesforce), SAP 영역 약 9년</p>
+      <ul class="contact">
+        <li><span>Email</span><a href="mailto:aerrfa@gmail.com">aerrfa@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+821053289918">+82 10 5328 9918</a></li>
+      </ul>
+      <div class="actions">
+        <a class="cta primary" href="resume.html"><span>View Resume<small>프로젝트 요약 · 고객사명 비공개</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="cta secondary" href="resume-full.html"><span>Full Resume<small>고객사명 포함 · 비밀번호 필요</small></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <button class="ctl" id="ctl" type="button" hidden>Skip</button>
+</section>
 
 <main>
   <div class="wrap">
     <div class="card">
       <h2>Industries</h2>
-      <ul class="chips"><li><a href="resume.html#fields">유통</a></li><li><a href="resume.html#fields">전자</a></li><li><a href="resume.html#fields">자동차</a></li><li><a href="resume.html#fields">바이오</a></li><li><a href="resume.html#fields">보험</a></li><li><a href="resume.html#fields">공공</a></li></ul>
+      <ul class="chips">
+        <li><a href="resume.html#fields">유통</a></li><li><a href="resume.html#fields">전자</a></li><li><a href="resume.html#fields">자동차</a></li>
+        <li><a href="resume.html#fields">바이오</a></li><li><a href="resume.html#fields">보험</a></li><li><a href="resume.html#fields">공공</a></li>
+      </ul>
       <p class="now"><b>Current</b>글로벌 전자 제조사 콘텐츠 CoE 구축 참여</p>
-    </div>
-    <div class="actions">
-      <a class="cta primary" href="resume.html"><span>View Resume<small>프로젝트 요약 · 고객사명 비공개</small></span><span aria-hidden="true">→</span></a>
-      <a class="cta secondary" href="resume-full.html"><span>Full Resume<small>고객사명 포함 · 비밀번호 필요</small></span><span aria-hidden="true">🔒</span></a>
     </div>
   </div>
 </main>
 <footer><div class="wrap">© 2026 김성태</div></footer>
+
+<script>
+(function(){
+  var reel=document.getElementById('reel'), ctl=document.getElementById('ctl');
+  if(!reel.animate) return;                       /* old browser: static final frame */
+
+  var TOTAL=15000, EO='cubic-bezier(.16,1,.3,1)', EI='cubic-bezier(.7,0,.84,0)';
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var anims=[], t0=0, raf=0, finished=false;
+  var yr=document.getElementById('yr'), pc=document.getElementById('pc');
+  function $(s){return reel.querySelector(s)}
+  function $$(s){return [].slice.call(reel.querySelectorAll(s))}
+
+  /* timeline: project start dates (2017.08 – 2026.09) with industry labels */
+  var P=[[2017.62,'공공'],[2018.17,'공공'],[2018.25,'솔루션'],[2019.0,'보험'],[2019.67,'보험'],[2021.42,'바이오'],
+         [2021.92,'자동차'],[2022.5,'자동차'],[2023.83,'전자'],[2024.42,'유통'],[2026.67,'전자']];
+  var tl=document.getElementById('tl'), A0=2017.4, A1=2026.9;
+  P.forEach(function(p,i){
+    var x=((p[0]-A0)/(A1-A0)*100).toFixed(2)+'%';
+    var d=document.createElement('i'); d.className='dot'; d.style.left=x; tl.appendChild(d);
+    var l=document.createElement('span'); l.className='lab'+(i%2?' dn':''); l.style.left=x; l.textContent=p[1]; tl.appendChild(l);
+  });
+
+  function add(el,kf,t,d,e,fill){ if(!el) return null;
+    var a=el.animate(kf,{delay:t,duration:d,easing:e||EO,fill:fill||'both'}); anims.push(a); return a; }
+  function inn(el,kf,t,d,e){ return add(el,kf,t,d,e,'both'); }
+  function out(el,kf,t,d,e){ return add(el,kf,t,d,e||EI,'forwards'); }
+  function scene(sel,tin,tout,zoom,dur){ var el=$(sel);
+    inn(el,[{opacity:0},{opacity:1}],tin,180,'linear');
+    out(el,[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale('+(zoom||1.06)+')'}],tout,dur||320); }
+  var UP=[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}];
+
+  function build(){
+    anims=[];
+    var bar=inn($('.progress i'),[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],0,TOTAL,'linear');
+    bar.onfinish=done;
+
+    /* 1 — years: 0.0 – 2.3s */
+    scene('.s1',0,2000);
+    inn($('.s1 .yr'),[{opacity:0,transform:'translateY(40px)',filter:'blur(10px)'},{opacity:1,transform:'none',filter:'blur(0)'}],100,700);
+    inn($('.s1 .rule'),[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],600,800);
+    inn($('.s1 .cap'),UP,1250,500);
+
+    /* 2 — role: 2.2 – 5.1s */
+    scene('.s2',2150,4850);
+    $$('.s2 .pa .w').forEach(function(w,i){
+      inn(w,[{transform:'translateY(110%)'},{transform:'translateY(0)'}],2250+i*110,650);
+      out(w,[{transform:'translateY(0)'},{transform:'translateY(-110%)'}],3480+i*60,380); });
+    inn($('.s2 .pa .kr'),[{opacity:0},{opacity:1}],2700,400,'linear');
+    out($('.s2 .pa .kr'),[{opacity:1},{opacity:0}],3450,200,'linear');
+    $$('.s2 .pb .w').forEach(function(w,i){
+      inn(w,[{transform:'translateY(110%)'},{transform:'translateY(0)'}],3780+i*110,650); });
+    inn($('.s2 .pb .kr'),[{opacity:0},{opacity:1}],4200,400,'linear');
+    inn($('.s2 .sweep'),[{transform:'translateX(-100%)'},{transform:'translateX(100%)'}],2200,1100,'ease-in-out');
+    out($('.s2 .sweep'),[{transform:'translateX(-100%)'},{transform:'translateX(100%)'}],3760,1100,'ease-in-out');
+
+    /* 3 — industries: 5.05 – 9.2s */
+    scene('.s3',5050,8880);
+    var segs=$$('.s3 .segs i');
+    $$('.s3 .ind').forEach(function(el,i){ var t=5150+i*620;
+      inn(el,[{clipPath:'inset(0 100% 0 0)',transform:'translateX(-28px)'},{clipPath:'inset(0 0% 0 0)',transform:'none'}],t,420);
+      if(i<5) out(el,[{clipPath:'inset(0 0 0 0%)'},{clipPath:'inset(0 0 0 100%)'}],t+560,170);
+      inn(segs[i],[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],t,600,'linear');
+      add($('.s3 .flash'),[{opacity:0},{opacity:.13},{opacity:0}],t,380,'ease-out','none'); });
+
+    /* 4 — tools & domains: 9.15 – 12.0s */
+    scene('.s4',9150,11700);
+    $$('.s4 .track').forEach(function(tr,i){ var l=i%2===0;
+      inn(tr,[{transform:'translateX('+(l?'0':'-50%')+')'},{transform:'translateX('+(l?'-50%':'0')+')'}],9150,2850,'linear'); });
+    inn($('.s4 .count'),[{opacity:0,transform:'scale(.6)'},{opacity:1,transform:'scale(1)'}],9300,600);
+
+    /* 5 — timeline: 11.75 – 13.8s, then zooms into "Present" */
+    scene('.s5',11750,13250,2.4,500);
+    inn($('.s5 .tl-line'),[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],11800,700);
+    $$('.s5 .dot').forEach(function(d,i){
+      inn(d,[{opacity:0,transform:'translate(-50%,-50%) scale(0)'},
+             {opacity:1,transform:'translate(-50%,-50%) scale(1.7)',offset:.55},
+             {opacity:1,transform:'translate(-50%,-50%) scale(1)'}],11950+i*95,380,'ease-out'); });
+    $$('.s5 .lab').forEach(function(l,i){ inn(l,[{opacity:0},{opacity:1}],12050+i*95,300,'linear'); });
+    inn($('.s5 .ends'),[{opacity:0},{opacity:1}],11900,400,'linear');
+
+    /* 6 — final frame: 13.45 – 15.0s */
+    $$('.final h1 span').forEach(function(s,i){
+      inn(s,[{opacity:0,transform:'translateY(55%)',filter:'blur(12px)'},{opacity:1,transform:'none',filter:'blur(0)'}],13450+i*100,700); });
+    ['.final .en','.final .role','.final .sub','.final .contact','.final .actions'].forEach(function(s,i){
+      inn($(s),UP,13900+i*130,520); });
+
+    t0=performance.now();
+  }
+
+  function ease(p){ return 1-Math.pow(1-p,3); }
+  function clamp(v){ return v<0?0:v>1?1:v; }
+  function counters(t){
+    yr.textContent=2017+Math.round(9*ease(clamp((t-200)/1300)));
+    pc.textContent=Math.round(11*ease(clamp((t-9350)/1150)));
+  }
+  function tick(now){
+    var t=finished?TOTAL:now-t0;
+    counters(t);
+    net.boost=(t>5000&&t<11800)?1.9:1;
+    if(!finished) raf=requestAnimationFrame(tick);
+  }
+  function play(){
+    cancelAnimationFrame(raf); anims.forEach(function(a){a.cancel();});
+    finished=false; reel.classList.remove('done'); reel.classList.add('playing');
+    ctl.hidden=false; ctl.textContent='Skip'; ctl.setAttribute('aria-label','소개 영상 건너뛰기');
+    build(); raf=requestAnimationFrame(tick);
+  }
+  function skip(){ anims.forEach(function(a){a.finish();}); }
+  function done(){
+    finished=true; cancelAnimationFrame(raf); counters(TOTAL); net.boost=1; net.calm=true;
+    reel.classList.remove('playing'); reel.classList.add('done');
+    ctl.textContent='Replay'; ctl.setAttribute('aria-label','소개 영상 다시 보기');
+  }
+  ctl.addEventListener('click',function(){ finished?play():skip(); });
+
+  /* ---------- background network ---------- */
+  var net=(function(){
+    var cv=document.getElementById('net'), cx=cv.getContext('2d'), W=0,H=0,N=[],run=false,vis=true;
+    var o={boost:1,calm:false,sp:1};
+    function size(){
+      var r=reel.getBoundingClientRect(), dpr=Math.min(2,window.devicePixelRatio||1);
+      W=r.width; H=r.height; cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr); cx.setTransform(dpr,0,0,dpr,0,0);
+      var n=Math.round(Math.min(84,Math.max(30,W*H/15000))); N=[];
+      for(var i=0;i<n;i++) N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.5+.7});
+      if(reduce) frame();
+    }
+    function frame(){
+      var target=(o.calm?.4:1)*o.boost; o.sp+=(target-o.sp)*.04;
+      cx.clearRect(0,0,W,H);
+      var i,j,a,b,dx,dy,d2,R=128,R2=R*R;
+      for(i=0;i<N.length;i++){ a=N[i];
+        if(!reduce){ a.x+=a.vx*o.sp; a.y+=a.vy*o.sp;
+          if(a.x<-10)a.x=W+10; else if(a.x>W+10)a.x=-10; if(a.y<-10)a.y=H+10; else if(a.y>H+10)a.y=-10; } }
+      cx.lineWidth=1;
+      for(i=0;i<N.length;i++){ a=N[i];
+        for(j=i+1;j<N.length;j++){ b=N[j]; dx=a.x-b.x; dy=a.y-b.y; d2=dx*dx+dy*dy;
+          if(d2<R2){ cx.strokeStyle='rgba(90,160,230,'+((1-Math.sqrt(d2)/R)*.38).toFixed(3)+')';
+            cx.beginPath(); cx.moveTo(a.x,a.y); cx.lineTo(b.x,b.y); cx.stroke(); } } }
+      cx.fillStyle='rgba(170,205,240,.75)';
+      for(i=0;i<N.length;i++){ a=N[i]; cx.beginPath(); cx.arc(a.x,a.y,a.r,0,6.283); cx.fill(); }
+    }
+    function loop(){ if(!run) return; frame(); requestAnimationFrame(loop); }
+    function start(){ if(reduce||run||!vis||document.hidden) return; run=true; requestAnimationFrame(loop); }
+    function stop(){ run=false; }
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(size,150); });
+    if('IntersectionObserver' in window) new IntersectionObserver(function(e){ vis=e[0].isIntersecting; vis?start():stop(); }).observe(reel);
+    document.addEventListener('visibilitychange',function(){ document.hidden?stop():start(); });
+    size(); start();
+    return o;
+  })();
+
+  /* play once per visit; reduced-motion visitors get the final frame (Replay still available) */
+  var seen=false; try{ seen=sessionStorage.getItem('reel-seen')==='1'; sessionStorage.setItem('reel-seen','1'); }catch(e){}
+  if(reduce||seen){ reel.classList.add('playing'); build(); ctl.hidden=false; skip(); return; }
+  var started=false;
+  function go(){ if(started) return; started=true; play(); }
+  reel.classList.add('playing'); build(); anims.forEach(function(a){a.pause();});   /* hold first frame until fonts load */
+  if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(go); setTimeout(go,1200); } else go();
+})();
+</script>
 </body>
 </html>
